@@ -39,7 +39,7 @@ Examples:
 
 function findInObj(arr, key, searchValue){
     return arr.filter(function(value){
-		return value[key] === true;
+		return value[key] === searchValue;
     })[0];
 }
 
