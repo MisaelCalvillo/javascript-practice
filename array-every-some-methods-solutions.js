@@ -7,7 +7,9 @@ Examples:
 */
 
 function hasOddNumber(arr){
-    
+    return arr.some(function(value){
+        return value % 2 !== 0;
+    });
 }
 
 /*
@@ -19,8 +21,11 @@ Examples:
 */
 
 function hasAZero(num){
-    
+    return num.toString().split('').some(function(value){
+		return value === '0';
+    });
 }
+
 
 /*
 Write a function called hasOnlyOddNumbers which accepts an array and returns true if every single number in the array is odd. If any of the values in the array are not odd, the function should return false. 
@@ -31,7 +36,9 @@ Examples:
 */
 
 function hasOnlyOddNumbers(arr){
-    
+    return arr.every(function(value){
+		return value % 2 !== 0;
+    });
 }
 
 /*
@@ -43,7 +50,9 @@ Examples:
 */
 
 function hasNoDuplicates(arr){
-    
+    return !arr.some(function(value, index){
+		return arr.indexOf(value, index + 1) !== -1; 
+    });
 }
 
 /*
@@ -62,7 +71,9 @@ Examples:
 */
 
 function hasCertainKey(arr, key){
-    
+    return arr.every(function(value){
+		return value[key] !== undefined;
+    });
 }
 
 /*
@@ -82,5 +93,7 @@ Examples:
 */
 
 function hasCertainValue(arr, key, searchValue){
-    
+    return arr.every(function(value){
+		return value[key] === searchValue;
+    });
 }
