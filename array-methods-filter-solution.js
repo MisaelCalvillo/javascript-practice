@@ -7,7 +7,7 @@ Examples:
 
 function filterByValue(arr, key){
     return arr.filter(function(value){
-        return arr[key] !== undefined;
+        return value[key] !== undefined;
     });
 }
 
