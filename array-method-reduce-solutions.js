@@ -83,5 +83,8 @@ Examples:
 */
 
 function partition(arr, callback){
-    
+    return arr.reduce(function(acc, next){
+		callback(next) ? acc[0].push(next) : acc[1].push(next);
+		return acc;
+	}, [[],[]]);
 }
