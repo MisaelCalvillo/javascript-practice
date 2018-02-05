@@ -26,7 +26,14 @@ Examples:
 */
 
 function vowelCount(str){
-   
+   return str.toLowerCase().split('').reduce(function(acc, next){
+		if( next in acc && "aeiou".indexOf(next) !== -1){
+			acc[next]++;
+        } else if (!(next in acc) && ("aeiou".indexOf(next) !== -1)) {
+			acc[next] = 1;
+        }
+		return acc;
+}, {});
 }
 
 /*
