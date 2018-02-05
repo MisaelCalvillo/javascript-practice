@@ -42,5 +42,16 @@ Examples (yours might not be like this, since the answer is random every time):
 */
 
 function guessingGame(amount){
-    
+    var answer = Math.floor(Math.random() * 11);
+	var guesses = 0;
+	return function(guess){
+		guesses++;
+		if( amount >= guesses ) {
+			return guess === answer ? "You got it!" : 
+				   guess > answer 	 ? "Your guess is too high!" :
+						   				"Your guess is too low!";
+        } else {
+			return "You are all done playing!";
+        }
+    }
 }
