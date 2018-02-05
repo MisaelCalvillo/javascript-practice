@@ -52,7 +52,11 @@ Examples:
 */
 
 function addKeyAndValue(arr, key, value){
-    
+    return arr.reduce(function(acc, next){
+		next[key] = value;
+		acc.push(next);
+		return acc;
+	}, []);
 }
 
 
