@@ -49,7 +49,12 @@ Examples:
 */
 
 function invokeMax(fn, num){
-    
+    var max = 0;
+    return function() {
+        if(max >= num) return "Maxed Out!";
+        max++;
+        return fn.apply(this, arguments);
+    }
 }
 
 /* 
